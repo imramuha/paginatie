@@ -79,25 +79,24 @@ abstract class Main {
         /// a pagetable
         /// instruction(s)
         // can't be bigger than 4KByte*16pages [64KByte]
-        List<Process> processes = new ArrayList<Process>();
-        List<Process.PageTable> pageTable = new ArrayList<>();
+        List<Process> processes = new ArrayList<>();
+        List<Process<Process.PageTable>> pageTables = new ArrayList<>();
 
         // create processes
         // amount of process are made and also one page table for each of them
         for(int i = 0; i < amountProcesses; i++) {
-            Process process = new Process(
+
+            Process process = new Process<>(
                     i
             );
             processes.add(process);
 
-            /*Process.PageTable pageTable = process.new PageTable(i);
-
             for(int j = 0; j < 16; j++) {
-                Process.PageTable pageTableEntry = pageTable.new PageTableEntry (
+                Process.PageTable pageTable  = process.new PageTable(
                         44,55,77,66
                 );
-                pageTableEntries.add(pageTableEntry);
-            }*/
+               pageTables.add(pageTable);
+            }
         }
 
         // page table has 16 [0, 15] pages for each process
@@ -106,10 +105,10 @@ abstract class Main {
         for(int i = 0; i < processes.size(); i++) {
             System.out.println("process: " + processes.get(i).pid);
 
-            /*System.out.println(pageTableEntries.size());
-            for(int j  = 0; j < pageTableEntries.size(); j++) {
-                System.out.println("page entry" + j + ": " + pageTableEntries.get(j).frameid + " " +  pageTableEntries.get(j).presentBit + " " + pageTableEntries.get(j).modifyBit + " " + pageTableEntries.get(j).lastAccessTime);
-            }*/
+            System.out.println(pageTables.size());
+            for(int j  = 0; j < pageTables.size(); j++) {
+                System.out.println("page entry" + j + ": "  /*pageTables.get(j).frameid + " " +  pageTables.get(j).presentBit + " " + pageTableEntries.get(j).modifyBit + " " + pageTableEntries.get(j).lastAccessTime*/);
+            }
         }
 
         // RAM with 12 frames (2^12) aka 48kByte -> thus each frame is 4KByte
@@ -204,7 +203,7 @@ abstract class Main {
     // page table
     // 1 or multiple instructions
     // kan be bigger than 4KByte*16pages [64KByte]
-    public static class Process {
+    public static class Process<P extends Process> {
 
         private int pid;
 
@@ -214,7 +213,7 @@ abstract class Main {
         }
 
         // 16 entries per pagetable
-        public static class PageTable extends Process{
+        public class PageTable extends Process<Process> {
             private int frameid;
             private int presentBit;
             private int modifyBit;
