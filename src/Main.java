@@ -73,20 +73,29 @@ abstract class Main {
         userinterface.main(instructions);
     }
 
+
+    // een process:
+    /// een pagetable
+    /// kan meerdere instructies hebben
+    public static class Process {
+
+    }
+
+    // elke instructie is behoort tot een process - kan je achter van de PID
     public static class Instruction {
 
-        private int instructionId;
+        private int pid;
         private String operation;
         private int address;
 
         public Instruction(int instructionId, String operation, int address) {
-            this.instructionId = instructionId;
+            this.pid = instructionId;
             this.operation = operation;
             this.address = address;
         }
 
         public int getInstructionId(){
-            return this.instructionId;
+            return this.pid;
         }
 
         public String getOperation(){
@@ -119,6 +128,12 @@ abstract class Main {
         // bevat de pages die niet gebruikt worden
     }
 }
+
+// te doen:
+// 01. address vertaling
+// 02. clock incrementering
+// 03. least recently used replace strategy als er nieuwe proces bijkoment ingv er geen plaats meer is
+//     voo zij instructies en er plaats gemaakt moet worden.
 
 // for 1st button
 class RunInstruction {
