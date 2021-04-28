@@ -82,8 +82,11 @@ abstract class Main {
         int[] processes = new int[amountProcesses];
 
 
+        // RAM with 12 frames (2^12) aka 48kByte -> thus each frame is 4KByte
+        int[] ramSpace = new int[12];
+        System.out.println(ramSpace);
 
-        // virtualaddressspace with 16 frames
+        // virtualaddressspace with 16 pages
         int[] virtualAddressSpace = new int[16];
         System.out.println(virtualAddressSpace);
 
@@ -98,12 +101,12 @@ abstract class Main {
             // a new page gets created and the page frames also get allocated
             // it could be possible the you need to take frames that are currently taken by other processes
             if(instructions.get(i).getOperation().equals("Start")){
-                System.out.println(i + "START");
+                System.out.println(i + "START - ");
             }
             // this only happens when read/write aka vitualspaceaddress.
             else if (instructions.get(i).getOperation().equals("Write") || instructions.get(i).getOperation().equals("Read")) {
                 //System.out.println(i + " " + instructions.get(i).getAddress());
-                System.out.println(i + "READ OR WRITE");
+                System.out.println(i + "READ OR WRITE - ");
                 // we know that there are
                 // 4096 bits -> 65536 / 16 frames
                 // [0, 15] -> dus afhankelijk waar het address zal vallen, nemen wij dat frame
@@ -146,13 +149,21 @@ abstract class Main {
             // page table of this process gets removed
             // and as seen above, if necessary, the frames get redistributed between the remaining processes
             else if(instructions.get(i).getOperation().equals("Terminate")) {
-                System.out.println(i + "TERMINATE");
+                System.out.println(i + "TERMINATE - ");
             }
         }
 
-        // show the addresses in virtualaddressspace
+
+        // show the frames in RAM
+        System.out.println("*********** RAM/main memory ************");
+        for(int i = 0; i < ramSpace.length; i++) {
+            System.out.println("FRAME " + (i+1) + ": [" + ramSpace[i] + "]");
+        }
+
+        // show the pages in virtualaddressspace
+        System.out.println("*********** VIRTUAL/ secondary memory  ************");
         for(int i = 0; i < virtualAddressSpace.length; i++) {
-            System.out.println(i + " " + virtualAddressSpace[i]);
+            System.out.println("PAGE " + (i+1) + ": [" + virtualAddressSpace[i] + "]");
         }
 
         // this is for interface -- for later

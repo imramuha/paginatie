@@ -11,8 +11,6 @@ public class Userinterface {
 
     public static void main(List<Main.Instruction> instructions, int[] virtualAddressSpace) {
 
-        System.out.println("44");
-
         JFrame f = new JFrame("A JFrame");
 
         f.setSize(550, 750);
