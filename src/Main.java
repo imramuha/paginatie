@@ -24,7 +24,7 @@ abstract class Main {
         File xmlFile = new File("Instructions_30_3.xml");
 
         // the number after the last underscore represents the amount of processes
-        int processes = 3;
+        int amountProcesses = 3;
 
         DocumentBuilderFactory documentBuilderFactory = DocumentBuilderFactory.newInstance();
         DocumentBuilder documentBuilder = documentBuilderFactory.newDocumentBuilder();
@@ -79,9 +79,11 @@ abstract class Main {
         /// een pagetable
         /// kan meerdere instructies hebben
         // kan nooit groter zijn dan 4KByte*16pages [64KByte]
+        int[] processes = new int[amountProcesses];
 
 
-        // -- for every instruction we look if its read or write then we do that
+
+        // virtualaddressspace with 16 frames
         int[] virtualAddressSpace = new int[16];
         System.out.println(virtualAddressSpace);
 
@@ -93,6 +95,8 @@ abstract class Main {
         // at terminate we change our processes data?
         for(int i = 0; i < instructions.size(); i++) {
 
+            // a new page gets created and the page frames also get allocated
+            // it could be possible the you need to take frames that are currently taken by other processes
             if(instructions.get(i).getOperation().equals("Start")){
                 System.out.println(i + "START");
             }
@@ -138,6 +142,9 @@ abstract class Main {
                     virtualAddressSpace[15] = address;
                 }
             }
+
+            // page table of this process gets removed
+            // and as seen above, if necessary, the frames get redistributed between the remaining processes
             else if(instructions.get(i).getOperation().equals("Terminate")) {
                 System.out.println(i + "TERMINATE");
             }
@@ -189,12 +196,15 @@ abstract class Main {
         }
     }
 
-    // per process bevat een pagetable die max 16 [0,15] entries kan bevatten
+    // every active process owns a pagetable
     class pageTable{
-        private int frameId;
-        private int presentBit;
-        private int modifyBit;
-        private int lastAccessTime;
+        // every entry contains the following items and there are 16 for each pagetable
+        class pageTableEntry {
+            private int frameId;
+            private int presentBit;
+            private int modifyBit;
+            private int lastAccessTime;
+        }
     }
 
     // RAM - bevat 12 frames, elke van max 4KByte ruimte voor de pages. Daarom zijn pages ook 4KByte. Normaal zit hier
