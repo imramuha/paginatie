@@ -22,6 +22,10 @@ abstract class Main {
 
         // reading xml-file and making the data usable
         File xmlFile = new File("Instructions_30_3.xml");
+
+        // the number after the last underscore represents the amount of processes
+        int processes = 3;
+
         DocumentBuilderFactory documentBuilderFactory = DocumentBuilderFactory.newInstance();
         DocumentBuilder documentBuilder = documentBuilderFactory.newDocumentBuilder();
         org.w3c.dom.Document document = documentBuilder.parse(xmlFile);
@@ -67,6 +71,15 @@ abstract class Main {
 
         // button 2
         RunInstructions.main();
+
+
+        // for each process (different PIDs inside the given XMLset)
+        // we need to make a process and for each process a page table
+        // een process bevat:
+        /// een pagetable
+        /// kan meerdere instructies hebben
+        // kan nooit groter zijn dan 4KByte*16pages [64KByte]
+
 
         // -- for every instruction we look if its read or write then we do that
         int[] virtualAddressSpace = new int[16];
@@ -142,15 +155,15 @@ abstract class Main {
     }
 
 
-    // een process:
-    /// een pagetable
-    /// kan meerdere instructies hebben
-    // kan nooit groter zijn dan 4KByte*16pages [64KByte]
+    // each process contains a:
+    // page table
+    // 1 or multiple instructions
+    // kan be bigger than 4KByte*16pages [64KByte]
     public static class Process {
 
     }
 
-    // elke instructie is behoort tot een process - kan je achter van de PID
+    // every instruction belongs to a process, look at PID if needed to know
     public static class Instruction {
 
         private int pid;
