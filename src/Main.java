@@ -62,9 +62,15 @@ abstract class Main {
             System.out.printf(" %-15s \n", instructions.get(i).getAddress());
         }
 
-        Userinterface userinterface = new Userinterface();
+        // button 1
+        RunInstruction.main();
 
-        userinterface.main(null);
+        // button 2
+        RunInstructions.main();
+
+
+        Userinterface userinterface = new Userinterface();
+        userinterface.main(instructions);
     }
 
     public static class Instruction {
@@ -90,6 +96,40 @@ abstract class Main {
         public int getAddress(){
             return this.address;
         }
+    }
+
+    // per process 1 pagetable en kan 12 (0,11) entries bevatted. Daarnaast
+    class pageTable{
+        private int frameId;
+        private int presentBit;
+        private int modifyBit;
+        private int lastAccessTime;
+    }
+
+    // RAM - bevat 12 frames, elke van max 4KByte ruimte voor de pages. Daarom zijn pages ook 4KByte. Normaal zit hier
+    // ook de geheugensharing en page tables in bewaard.
+    class mainGeheugen {
+        // bestaat uit 12 frames
+        // en elke frame kan een page bevatten
+        // page tables
+    }
+
+    // aka virtuele adresruimte
+    class virtueleGeheugen {
+        // bevat de pages die niet gebruikt worden
+    }
+}
+
+// for 1st button
+class RunInstruction {
+    static void main() {
+
+    }
+}
+
+// for 2nd button
+class RunInstructions {
+    static void main() {
 
     }
 }
