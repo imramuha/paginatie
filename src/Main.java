@@ -68,15 +68,84 @@ abstract class Main {
         // button 2
         RunInstructions.main();
 
+        // -- for every instruction we look if its read or write then we do that
+        int[] virtualAddressSpace = new int[16];
+        System.out.println(virtualAddressSpace);
 
+
+        // for every instruction that is present we, populate our virtual address space
+        // there are 4 operations: start, read, write and terminate
+        // at start -> we make a new process
+        // virtualaddress only used during read/write
+        // at terminate we change our processes data?
+        for(int i = 0; i < instructions.size(); i++) {
+
+            if(instructions.get(i).getOperation().equals("Start")){
+                System.out.println(i + "START");
+            }
+            // this only happens when read/write aka vitualspaceaddress.
+            else if (instructions.get(i).getOperation().equals("Write") || instructions.get(i).getOperation().equals("Read")) {
+                //System.out.println(i + " " + instructions.get(i).getAddress());
+                System.out.println(i + "READ OR WRITE");
+                // we know that there are
+                // 4096 bits -> 65536 / 16 frames
+                // [0, 15] -> dus afhankelijk waar het address zal vallen, nemen wij dat frame
+                int address = instructions.get(i).getAddress();
+                if(address >= 0 && address <= 4096) {
+                    virtualAddressSpace[0] = address;
+                } else  if(address >= 4097 && address <= 8192) {
+                    virtualAddressSpace[1] = address;
+                } else  if(address >= 8192 && address <= 12288) {
+                    virtualAddressSpace[2] = address;
+                } else  if(address >= 12289 && address <= 16384) {
+                    virtualAddressSpace[3] = address;
+                } else  if(address >= 16385 && address <= 20480) {
+                    virtualAddressSpace[4] = address;
+                } else  if(address >= 20481 && address <= 24576) {
+                    virtualAddressSpace[5] = address;
+                } else  if(address >= 24577 && address <= 28672) {
+                    virtualAddressSpace[6] = address;
+                } else  if(address >= 28673 && address <= 32768) {
+                    virtualAddressSpace[7] = address;
+                } else  if(address >= 32769 && address <= 36864) {
+                    virtualAddressSpace[8] = address;
+                } else  if(address >= 36865 && address <= 40960) {
+                    virtualAddressSpace[9] = address;
+                } else  if(address >= 40961 && address <= 45056) {
+                    virtualAddressSpace[10] = address;
+                } else  if(address >= 45057 && address <= 49152) {
+                    virtualAddressSpace[11] = address;
+                } else  if(address >= 49153 && address <= 53248) {
+                    virtualAddressSpace[12] = address;
+                } else  if(address >= 53249 && address <= 57344) {
+                    virtualAddressSpace[13] = address;
+                } else  if(address >= 57345 && address <= 61440) {
+                    virtualAddressSpace[14] = address;
+                } else  if(address >= 61441 && address <= 65536) {
+                    virtualAddressSpace[15] = address;
+                }
+            }
+            else if(instructions.get(i).getOperation().equals("Terminate")) {
+                System.out.println(i + "TERMINATE");
+            }
+        }
+
+        // show the addresses in virtualaddressspace
+        for(int i = 0; i < virtualAddressSpace.length; i++) {
+            System.out.println(i + " " + virtualAddressSpace[i]);
+        }
+
+        // this is for interface -- for later
         Userinterface userinterface = new Userinterface();
-        userinterface.main(instructions);
+        userinterface.main(instructions, virtualAddressSpace);
+
     }
 
 
     // een process:
     /// een pagetable
     /// kan meerdere instructies hebben
+    // kan nooit groter zijn dan 4KByte*16pages [64KByte]
     public static class Process {
 
     }
@@ -137,6 +206,9 @@ abstract class Main {
 
 // for 1st button
 class RunInstruction {
+    static void writeVM(){
+
+    }
     static void main() {
 
     }

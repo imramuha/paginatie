@@ -9,7 +9,7 @@ import javax.swing.JTextArea;
 
 public class Userinterface {
 
-    public static void main(List<Main.Instruction> instructions) {
+    public static void main(List<Main.Instruction> instructions, int[] virtualAddressSpace) {
 
         System.out.println("44");
 
@@ -35,11 +35,11 @@ public class Userinterface {
             @Override
             public void actionPerformed(ActionEvent e) {
                 textArea.append("Button 1 was pressed \n");
-                textArea.append("timer:" + "++incrementing number++ ");
-                textArea.append("instructie - virtuele adres huidige instructie - virtuele adres volgende instructie - reële adress [frame, offset ] ");
-                textArea.append("page table: " + "[0, 16] entries -> [frameid, presentbit, modifybit, lastaccestime ]");
-                textArea.append("RAM" + "[0, 11] blokken/frames -> [pid, pagenumber]");
-                textArea.append("Reële adres:" + "die aangesproken moet worden in het RAM");
+                textArea.append("timer:" + "++incrementing number++ \n");
+                textArea.append("instructie - virtuele adres huidige instructie - virtuele adres volgende instructie - reële adress [frame, offset ] \n");
+                textArea.append("page table: " + "[0, 16] entries -> [frameid, presentbit, modifybit, lastaccestime ] \n");
+                textArea.append("RAM" + "[0, 11] blokken/frames -> [pid, pagenumber] \n");
+                textArea.append("Reële adres:" + "die aangesproken moet worden in het RAM \n");
                 textArea.append(" \n");
             }
 
