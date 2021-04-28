@@ -35,7 +35,7 @@ public class Userinterface {
             @Override
             public void actionPerformed(ActionEvent e) {
                 textArea.append("Button 1 was pressed \n");
-                textArea.append(instructions.get(counter).getInstructionId() + "   " + instructions.get(counter).getOperation() + "   " + instructions.get(counter).getAddress());
+                textArea.append("timer" + "   " + "instructie (virt adres van huide en volgende instructie + reele adres en frame en offset)"+ "   " + "page table" + " reele adres in ram die aangesproken moet worden bij deze isntructie" + " " + "RAM met pid, pagenumber, er zijn 12 blokken/frames voor deze");
                 textArea.append(" \n");
             }
 
@@ -48,7 +48,7 @@ public class Userinterface {
                 textArea.append("Button 2 was pressed \n");
                 for(int i = 0; i < instructions.size(); i++) {
 
-                    textArea.append(instructions.get(i).getInstructionId() + "   " + instructions.get(i).getOperation() + "   " + instructions.get(i).getAddress() + "\n");
+                    "resultaten tabel" + "\n");
                 }
                 textArea.append(" \n");
             }
