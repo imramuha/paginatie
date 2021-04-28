@@ -35,7 +35,11 @@ public class Userinterface {
             @Override
             public void actionPerformed(ActionEvent e) {
                 textArea.append("Button 1 was pressed \n");
-                textArea.append("timer" + "   " + "instructie (virt adres van huide en volgende instructie + reele adres en frame en offset)"+ "   " + "page table" + " reele adres in ram die aangesproken moet worden bij deze isntructie" + " " + "RAM met pid, pagenumber, er zijn 12 blokken/frames voor deze");
+                textArea.append("timer:" + "++incrementing number++ ");
+                textArea.append("instructie - virtuele adres huidige instructie - virtuele adres volgende instructie - reële adress [frame, offset ] ");
+                textArea.append("page table: " + "[0, 16] entries -> [frameid, presentbit, modifybit, lastaccestime ]");
+                textArea.append("RAM" + "[0, 11] blokken/frames -> [pid, pagenumber]");
+                textArea.append("Reële adres:" + "die aangesproken moet worden in het RAM");
                 textArea.append(" \n");
             }
 
@@ -47,8 +51,7 @@ public class Userinterface {
             public void actionPerformed(ActionEvent e) {
                 textArea.append("Button 2 was pressed \n");
                 for(int i = 0; i < instructions.size(); i++) {
-
-                    "resultaten tabel" + "\n");
+                    textArea.append("resultaten tabel \n");
                 }
                 textArea.append(" \n");
             }
