@@ -67,35 +67,63 @@ abstract class Main {
         }
 
         // button 1
-        RunInstruction.main();
+        firstButton.main();
 
         // button 2
-        RunInstructions.main();
+        secondButton.main();
 
 
         // for each process (different PIDs inside the given XMLset)
         // we need to make a process and for each process a page table
         // een process bevat:
-        /// een pagetable
-        /// kan meerdere instructies hebben
-        // kan nooit groter zijn dan 4KByte*16pages [64KByte]
-        int[] processes = new int[amountProcesses];
+        /// a pagetable
+        /// instruction(s)
+        // can't be bigger than 4KByte*16pages [64KByte]
+        List<Process> processes = new ArrayList<Process>();
+        List<Process.PageTable> pageTable = new ArrayList<>();
 
+        // create processes
+        // amount of process are made and also one page table for each of them
+        for(int i = 0; i < amountProcesses; i++) {
+            Process process = new Process(
+                    i
+            );
+            processes.add(process);
+
+            /*Process.PageTable pageTable = process.new PageTable(i);
+
+            for(int j = 0; j < 16; j++) {
+                Process.PageTable pageTableEntry = pageTable.new PageTableEntry (
+                        44,55,77,66
+                );
+                pageTableEntries.add(pageTableEntry);
+            }*/
+        }
+
+        // page table has 16 [0, 15] pages for each process
+
+
+        for(int i = 0; i < processes.size(); i++) {
+            System.out.println("process: " + processes.get(i).pid);
+
+            /*System.out.println(pageTableEntries.size());
+            for(int j  = 0; j < pageTableEntries.size(); j++) {
+                System.out.println("page entry" + j + ": " + pageTableEntries.get(j).frameid + " " +  pageTableEntries.get(j).presentBit + " " + pageTableEntries.get(j).modifyBit + " " + pageTableEntries.get(j).lastAccessTime);
+            }*/
+        }
 
         // RAM with 12 frames (2^12) aka 48kByte -> thus each frame is 4KByte
         int[] ramSpace = new int[12];
-        System.out.println(ramSpace);
 
         // virtualaddressspace with 16 pages
         int[] virtualAddressSpace = new int[16];
-        System.out.println(virtualAddressSpace);
-
 
         // for every instruction that is present we, populate our virtual address space
         // there are 4 operations: start, read, write and terminate
         // at start -> we make a new process
         // virtualaddress only used during read/write
         // at terminate we change our processes data?
+        System.out.println("*********** INSTRUCTIONS ************");
         for(int i = 0; i < instructions.size(); i++) {
 
             // a new page gets created and the page frames also get allocated
@@ -172,12 +200,34 @@ abstract class Main {
 
     }
 
-
     // each process contains a:
     // page table
     // 1 or multiple instructions
     // kan be bigger than 4KByte*16pages [64KByte]
     public static class Process {
+
+        private int pid;
+
+
+        public Process(int pid) {
+            this.pid = pid;
+        }
+
+        // 16 entries per pagetable
+        public static class PageTable extends Process{
+            private int frameid;
+            private int presentBit;
+            private int modifyBit;
+            private int lastAccessTime;
+
+            public PageTable(int frameid, int presentBit, int modifyBit, int lastAccessTime) {
+                super(0);
+                this.frameid = frameid;
+                this.presentBit = presentBit;
+                this.modifyBit = modifyBit;
+                this.lastAccessTime = lastAccessTime;
+            }
+        }
 
     }
 
@@ -189,7 +239,7 @@ abstract class Main {
         private int address;
 
         public Instruction(int instructionId, String operation, int address) {
-            this.pid = instructionId;
+            this.pid = pid;
             this.operation = operation;
             this.address = address;
         }
@@ -207,29 +257,11 @@ abstract class Main {
         }
     }
 
-    // every active process owns a pagetable
-    class pageTable{
-        // every entry contains the following items and there are 16 for each pagetable
-        class pageTableEntry {
-            private int frameId;
-            private int presentBit;
-            private int modifyBit;
-            private int lastAccessTime;
-        }
-    }
-
     // RAM - bevat 12 frames, elke van max 4KByte ruimte voor de pages. Daarom zijn pages ook 4KByte. Normaal zit hier
     // ook de geheugensharing en page tables in bewaard.
-    class mainGeheugen {
-        // bestaat uit 12 frames
-        // en elke frame kan een page bevatten
-        // page tables
-    }
+
 
     // aka virtuele adresruimte
-    class virtueleGeheugen {
-        // bevat de pages die niet gebruikt worden
-    }
 }
 
 // te doen:
@@ -239,17 +271,14 @@ abstract class Main {
 //     voo zij instructies en er plaats gemaakt moet worden.
 
 // for 1st button
-class RunInstruction {
-    static void writeVM(){
-
-    }
+class firstButton {
     static void main() {
 
     }
 }
 
 // for 2nd button
-class RunInstructions {
+class secondButton {
     static void main() {
 
     }
