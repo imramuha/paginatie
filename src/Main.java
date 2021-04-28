@@ -107,7 +107,7 @@ abstract class Main {
         }
     }
 
-    // per process 1 pagetable en kan 12 (0,11) entries bevatted. Daarnaast
+    // per process bevat een pagetable die max 16 [0,15] entries kan bevatten
     class pageTable{
         private int frameId;
         private int presentBit;
