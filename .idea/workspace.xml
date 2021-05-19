@@ -20,8 +20,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="84f7228b-8e48-4ae1-b2a8-4bc9b2930f76" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/opdracht_virtueel_geheugen_2021.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/paginatie/Main$Instruction.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/paginatie/Main$Instruction.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/paginatie/Main$Process$PageTable.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/paginatie/Main$Process.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/paginatie/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/paginatie/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/paginatie/Userinterface$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/paginatie/Userinterface$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/paginatie/Userinterface$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/paginatie/Userinterface$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/paginatie/Userinterface.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/paginatie/Userinterface.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/paginatie/firstButton.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/paginatie/secondButton.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Userinterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Userinterface.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,19 +58,39 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../02. KU Leuven/07. Besturingssystemen 2/process_scheduling" />
+    <property name="UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH" value="389" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
-  <component name="RunManager">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\im_19\Desktop\bs2o2\paginatie" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\im_19\Desktop\bs2o2\paginatie" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.Main">
+    <configuration name="Main" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="paginatie" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Userinterface" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Userinterface" />
+      <module name="paginatie" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.Main" />
+      <item itemvalue="Application.Userinterface" />
+    </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main" />
+        <item itemvalue="Application.Userinterface" />
       </list>
     </recent_temporary>
   </component>
@@ -86,33 +118,81 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="518" y="187" key="FileChooserDialogImpl" timestamp="1619184117429">
+    <state x="224" y="72" width="1089" height="785" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1619742459203">
       <screen x="0" y="0" width="1474" height="864" />
     </state>
-    <state x="518" y="187" key="FileChooserDialogImpl/0.0.1474.864@0.0.1474.864" timestamp="1619184117429" />
-    <state width="1431" height="262" key="GridCell.Tab.0.bottom" timestamp="1619644819091">
+    <state x="224" y="72" width="1089" height="785" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1474.864@0.0.1474.864" timestamp="1619742459203" />
+    <state x="520" y="234" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1619704141162">
       <screen x="0" y="0" width="1474" height="864" />
     </state>
-    <state width="1431" height="262" key="GridCell.Tab.0.bottom/0.0.1474.864@0.0.1474.864" timestamp="1619644819091" />
-    <state width="1431" height="262" key="GridCell.Tab.0.center" timestamp="1619644819091">
+    <state x="520" y="234" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1474.864@0.0.1474.864" timestamp="1619704141162" />
+    <state x="543" y="139" key="#com.intellij.ide.util.MemberChooser" timestamp="1619780374147">
       <screen x="0" y="0" width="1474" height="864" />
     </state>
-    <state width="1431" height="262" key="GridCell.Tab.0.center/0.0.1474.864@0.0.1474.864" timestamp="1619644819091" />
-    <state width="1431" height="262" key="GridCell.Tab.0.left" timestamp="1619644819091">
+    <state x="543" y="139" key="#com.intellij.ide.util.MemberChooser/0.0.1474.864@0.0.1474.864" timestamp="1619780374147" />
+    <state x="467" y="222" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1619708042263">
       <screen x="0" y="0" width="1474" height="864" />
     </state>
-    <state width="1431" height="262" key="GridCell.Tab.0.left/0.0.1474.864@0.0.1474.864" timestamp="1619644819091" />
-    <state width="1431" height="262" key="GridCell.Tab.0.right" timestamp="1619644819091">
+    <state x="467" y="222" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1474.864@0.0.1474.864" timestamp="1619708042263" />
+    <state x="518" y="187" key="FileChooserDialogImpl" timestamp="1619731249295">
       <screen x="0" y="0" width="1474" height="864" />
     </state>
-    <state width="1431" height="262" key="GridCell.Tab.0.right/0.0.1474.864@0.0.1474.864" timestamp="1619644819091" />
+    <state x="518" y="187" key="FileChooserDialogImpl/0.0.1474.864@0.0.1474.864" timestamp="1619731249295" />
+    <state width="1431" height="192" key="GridCell.Tab.0.bottom" timestamp="1621428393006">
+      <screen x="0" y="0" width="1474" height="864" />
+    </state>
+    <state width="1431" height="192" key="GridCell.Tab.0.bottom/0.0.1474.864@0.0.1474.864" timestamp="1621428393006" />
+    <state width="1431" height="192" key="GridCell.Tab.0.center" timestamp="1621428393005">
+      <screen x="0" y="0" width="1474" height="864" />
+    </state>
+    <state width="1431" height="192" key="GridCell.Tab.0.center/0.0.1474.864@0.0.1474.864" timestamp="1621428393005" />
+    <state width="1431" height="192" key="GridCell.Tab.0.left" timestamp="1621428393005">
+      <screen x="0" y="0" width="1474" height="864" />
+    </state>
+    <state width="1431" height="192" key="GridCell.Tab.0.left/0.0.1474.864@0.0.1474.864" timestamp="1621428393005" />
+    <state width="1431" height="192" key="GridCell.Tab.0.right" timestamp="1621428393005">
+      <screen x="0" y="0" width="1474" height="864" />
+    </state>
+    <state width="1431" height="192" key="GridCell.Tab.0.right/0.0.1474.864@0.0.1474.864" timestamp="1621428393005" />
+    <state width="1431" height="277" key="GridCell.Tab.1.bottom" timestamp="1619827891039">
+      <screen x="0" y="0" width="1474" height="864" />
+    </state>
+    <state width="1431" height="277" key="GridCell.Tab.1.bottom/0.0.1474.864@0.0.1474.864" timestamp="1619827891039" />
+    <state width="1431" height="277" key="GridCell.Tab.1.center" timestamp="1619827891039">
+      <screen x="0" y="0" width="1474" height="864" />
+    </state>
+    <state width="1431" height="277" key="GridCell.Tab.1.center/0.0.1474.864@0.0.1474.864" timestamp="1619827891039" />
+    <state width="1431" height="277" key="GridCell.Tab.1.left" timestamp="1619827891039">
+      <screen x="0" y="0" width="1474" height="864" />
+    </state>
+    <state width="1431" height="277" key="GridCell.Tab.1.left/0.0.1474.864@0.0.1474.864" timestamp="1619827891039" />
+    <state width="1431" height="277" key="GridCell.Tab.1.right" timestamp="1619827891039">
+      <screen x="0" y="0" width="1474" height="864" />
+    </state>
+    <state width="1431" height="277" key="GridCell.Tab.1.right/0.0.1474.864@0.0.1474.864" timestamp="1619827891039" />
     <state width="498" height="442" key="SwitcherDM" timestamp="1619645375898">
       <screen x="0" y="0" width="1474" height="864" />
     </state>
     <state width="498" height="442" key="SwitcherDM/0.0.1474.864@0.0.1474.864" timestamp="1619645375898" />
+    <state x="178" y="53" key="new project wizard" timestamp="1619731270236">
+      <screen x="0" y="0" width="1474" height="864" />
+    </state>
+    <state x="178" y="53" key="new project wizard/0.0.1474.864@0.0.1474.864" timestamp="1619731270236" />
+    <state x="438" y="190" key="refactoring.ChangeSignatureDialog" timestamp="1619750077505">
+      <screen x="0" y="0" width="1474" height="864" />
+    </state>
+    <state x="438" y="190" key="refactoring.ChangeSignatureDialog/0.0.1474.864@0.0.1474.864" timestamp="1619750077505" />
     <state x="394" y="197" key="run.anything.popup" timestamp="1619627195515">
       <screen x="0" y="0" width="1474" height="864" />
     </state>
     <state x="394" y="197" key="run.anything.popup/0.0.1474.864@0.0.1474.864" timestamp="1619627195515" />
+    <state x="400" y="181" width="672" height="678" key="search.everywhere.popup" timestamp="1619719314455">
+      <screen x="0" y="0" width="1474" height="864" />
+    </state>
+    <state x="400" y="181" width="672" height="678" key="search.everywhere.popup/0.0.1474.864@0.0.1474.864" timestamp="1619719314455" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/paginatie$Userinterface.ic" NAME="Userinterface Coverage Results" MODIFIED="1619731165699" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/paginatie$Main.ic" NAME="Main Coverage Results" MODIFIED="1619742462292" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>
